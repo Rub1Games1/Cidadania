@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Jogador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <style>
+      body {
+        padding-top: 60px;
+        background-color: #2e2e2e;
+        color: white;
+      }
+    </style>
+    <script src="/js/websocket.js"></script>
+  </head>
+  <body>
+    <!-- <script src="/js/backgrounds.js"></script>
+    <script>
+      document.body.background = `/img/${backgrounds[Math.floor(Math.random() * backgrounds.length)]}.jpg`;
+    </script> -->
+    <div class="container" ng-controller="GameController">
+      <!-- Perguntas Respostas -->
+      <h1 ng-bind="question"></h1>
+      <button ng-disabled="resposta" type="button" class="btn btn-default btnResposta" ng-click="setResposta(answer)" ng-repeat="answer in answers" ng-bind="answer">
+      </button>
+
+      <!-- Escolher tema -->
+      
+        <h1 ng-bind="temaMsg"></h1>
+        <button type="button" class="btn btn-default" ng-click="setTema(tema)" ng-repeat="tema in temas" ng-bind="tema">
+        </button>
+    </div>
+        <!--<div class="span6">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th class="span2">Nome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="msg in messages">
+                <td class="span2" ng-bind="msg.name"></td>
+                <td class="span7" ng-bind="msg.text"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row controls">
+            <form ng-submit="send()">
+              <div class="span2"><input type="text" class="input-block-level" ng-model="name" ng-change="setName()" placeholder="Nome"></div>
+              <div class="input-append span7">
+                <input type="text" class="span6" ng-model="text" placeholder="Message">
+                <input type="submit" class="span1 btn btn-primary" value="Send" ng-disabled="!text">
+              </div>
+            </form>
+          </div>
+        </div>-->
+        
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+  </body>
+</html>

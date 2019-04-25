@@ -1,0 +1,12 @@
+{
+  "name": "cidadania",
+  "version": "0.0.1",
+  "main": "server.js",
+  "repository": "",
+  "author": "Lucas (backend & frontend), Ruben (frontend), Hardik (questoes) e Andrei",
+  "dependencies": {
+    "async": "~0.2.8",
+    "express": "~3.2.4",
+    "socket.io": "~0.9.14"
+  }
+}

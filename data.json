@@ -1,0 +1,31 @@
+{
+    "transportes": [
+        {
+            "q": "Qual é o transporte mais fixe?", "a": ["Trotinete", "Skate", "Prancha Surf", "Cavalo"]
+        }
+    ],
+    "plástico": [
+        {"q": "O plástico demora quanto tempo a decompor-se?", "a": ["400 anos", "500 anos", ">600 anos", "2 anos"]},
+        {"q": "O atum faz bem?", "a": ["o gonçalo sabe", "eu não sei", "ele n sabe", "nos n sabemos"]},
+        {"q": "O andrei demora quanto tempo a calar-se?", "a": ["não se cala", "400 anos", "500 anos", ">600 anos"]},
+        {"q": "O ruben vê quantos tentáculos por dia?", "a": [">600", "400", "500", "ninguém sabe"]}
+    ],
+    "batatas": [
+        {"q": "O plástico demora quanto tempo a decompor-se?", "a": ["400 anos", "500 anos", ">600 anos", "2 anos"]},
+        {"q": "O atum faz bem?", "a": ["o gonçalo sabe", "eu não sei", "ele n sabe", "nos n sabemos"]},
+        {"q": "O andrei demora quanto tempo a calar-se?", "a": ["não se cala", "400 anos", "500 anos", ">600 anos"]},
+        {"q": "O ruben vê quantos tentáculos por dia?", "a": [">600", "400", "500", "ninguém sabe"]}
+    ],
+    "lojas": [
+        {"q": "O plástico demora quanto tempo a decompor-se?", "a": ["400 anos", "500 anos", ">600 anos", "2 anos"]},
+        {"q": "O atum faz bem?", "a": ["o gonçalo sabe", "eu não sei", "ele n sabe", "nos n sabemos"]},
+        {"q": "O andrei demora quanto tempo a calar-se?", "a": ["não se cala", "400 anos", "500 anos", ">600 anos"]},
+        {"q": "O ruben vê quantos tentáculos por dia?", "a": [">600", "400", "500", "ninguém sabe"]}
+    ],
+    "baleias": [
+        {"q": "O plástico demora quanto tempo a decompor-se?", "a": ["400 anos", "500 anos", ">600 anos", "2 anos"]},
+        {"q": "O atum faz bem?", "a": ["o gonçalo sabe", "eu não sei", "ele n sabe", "nos n sabemos"]},
+        {"q": "O andrei demora quanto tempo a calar-se?", "a": ["não se cala", "400 anos", "500 anos", ">600 anos"]},
+        {"q": "O ruben vê quantos tentáculos por dia?", "a": [">600", "400", "500", "ninguém sabe"]}
+    ]
+}

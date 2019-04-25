@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Admin Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <style>
+      body {
+        padding-top: 25px;
+        background-color: #2e2e2e;
+        color: white;
+      }
+    </style>
+    <script>
+      function LobbyController($scope) {
+        var socket = io.connect();
+        socket.emit('setAdmin');
+
+        $scope.roster = [];
+        $scope.perguntas = 3;
+        $scope.rondas = 3;
+        coisas();
+
+        socket.on('rosterUpdate', function(arr) {
+            $scope.roster = arr;
+            $scope.$apply();
+        });
+
+        socket.on('boraoutromeuu', function(arr) {
+            coisas();
+            document.getElementById('btnComeca').disabled = false;
+            $scope.$apply();
+        });
+
+        $scope.setSettings = function setSettings() {
+            socket.emit('setSettings', {perguntas: $scope.perguntas, rondas: $scope.rondas});
+        }
+
+        $scope.comeca = function comeca() {
+            socket.emit('comecaojogobichooo');
+            document.getElementById('btnComeca').disabled = true;
+        }
+
+        function coisas() {
+            let val;
+            do {
+                val = parseInt(prompt("Defina a quantidade de perguntas por ronda: "));
+            } while(isNaN(val) || val < 1);
+            $scope.perguntas = val;
+
+            do {
+                val = parseInt(prompt("Defina a quantidade de rondas: "));
+            } while(isNaN(val) || val < 1);
+            $scope.rondas = val;
+
+            $scope.setSettings;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container" ng-controller="LobbyController">
+      <div class="page-header">
+        <h1>Cidadania Quiz</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+            <div class="span3">
+              <ul class="nav nav-list well">
+                <li ng-repeat="user in roster" ng-bind="user" style="color:black;">
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div id="coisas" class="col-sm">
+            <div class="span3">
+              <ul class="nav nav-list well" style="color:black;">
+                <li><h1><span>{{ perguntas }} </span></h1><p> perguntas</p></li>
+                <li><h1><span>{{ rondas }} </span></h1><p> rondas</p></li>
+                <li><h1><span>{{ roster.length }} </span></h1><p> jogadores</p></li>
+              </ul>
+            </div>
+        </div>
+        <div class="col-sm">
+          <div class="span3">
+            <button ng-click="comeca()" id="btnComeca" type="button" class="btn btn-danger">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+  </body>
+</html>
